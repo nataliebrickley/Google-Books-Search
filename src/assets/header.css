@@ -2,12 +2,33 @@
     background: linear-gradient(
         rgba(255, 255, 255, 0.2), 
         rgba(255, 255, 255, 0.2)
-      ), url("https://cdn.pixabay.com/photo/2016/11/29/02/56/blond-1866951_960_720.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50vh;
+      ), url("https://cdn.pixabay.com/photo/2016/11/29/02/56/blond-1866951_960_720.jpg") no-repeat;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      background-position: right;
+    height: 100vh;
     color: rgb(94, 9, 9);
     text-shadow: 1px 1px black;
-    padding-top: 10%;
-
+    padding-top: 25vh;
+}
+.header h1{
+    font-size: 64px;
+    font-family: 'Oleo Script', cursive;
+}
+.header h2 {
+    font-size: 30px;
+    font-family: 'Oleo Script', cursive;
+}
+.btn {
+    background: darkgreen;
+    height: 35px;
+}
+input {
+    height: 35px;
+}
+form {
+    width: 35vw;
+    margin: 40px auto;
 }
