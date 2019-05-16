@@ -2,3 +2,7 @@
     background: rgb(94, 9, 9);
     color: white;
 }
+.navbar a {
+    color: white;
+    margin-left: 15px;
+}
