@@ -26,12 +26,6 @@ mongoose
 //Routes
 const axios = require("axios")
 app.get("/api/books", (req, res) => {
-    // //    let API_KEY = process.env.API_KEY
-    // console.log("connected")
-    //    axios.get(`https://www.googleapis.com/books/v1/volumes?q=harrypotter`).then(function(response) {
-    //        console.log(response)
-    //    })
-
     db.Book
       .find({})
       .then(dbBook => res.json(dbBook))
