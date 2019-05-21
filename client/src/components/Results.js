@@ -15,7 +15,7 @@ class Results extends React.Component {
             <div className="results">
                 <h1>Search Results</h1>
                 
-                    {this.state.books.map(book => (
+                    {this.state.books.filter(book => book.volumeInfo.imageLinks !== undefined).map(book => (
                         <div className="result-box">
                             <hr />
                             <div className="row">

@@ -2,6 +2,10 @@ import React from "react"
 import "../assets/header.css"
 
 class Header extends React.Component {
+    handleSubmit = (event) => {
+        event.preventDefault()
+        this.props.handleSearch(this.props.search)
+    }
     render() {
         return(
             <div className="header">
@@ -9,8 +13,8 @@ class Header extends React.Component {
                 <h2>Search for and Save Books of Interest</h2>
                 <form>
                     <div className="input-group">
-                        <input className="form-control" type="text" placeholder="Find a Book"></input>
-                        <button className="btn input-group-append" type="submit" onClick={this.props.handleSearch}>Search</button>
+                        <input className="form-control" type="text" placeholder="Find a Book" value={this.props.search} onChange={this.props.updateInput}></input>
+                        <button className="btn input-group-append" onClick={this.handleSubmit}>Search</button>
                     </div>
                 </form>          
             </div>

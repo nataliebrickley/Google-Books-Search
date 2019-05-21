@@ -5,8 +5,8 @@ export default {
         return axios.get("/api/books")
     },
     //search google books
-    searchBooks: function() {
-      return axios.get("https://www.googleapis.com/books/v1/volumes?q=Harry%20Potter")
+    searchBooks: function(search) {
+      return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search)
                 
     }
 }
