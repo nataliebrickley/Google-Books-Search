@@ -1,21 +1,12 @@
 import React from "react";
 import "../assets/results.css"
 class Results extends React.Component {
-    state = {
-        books: []
-    }
-    componentWillReceiveProps() {
-        this.setState({ 
-            books: this.props.books
-        })
-        console.log(this.state)
-    }
     render() {
         return (
             <div className="results">
                 <h1>Search Results</h1>
                 
-                    {this.state.books.filter(book => book.volumeInfo.imageLinks !== undefined).map(book => (
+                    {this.props.books.filter(book => book.volumeInfo.imageLinks !== undefined && book.volumeInfo.authors !== undefined).map(book => (
                         <div className="result-box">
                             <hr />
                             <div className="row">
