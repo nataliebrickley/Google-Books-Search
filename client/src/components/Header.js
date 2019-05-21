@@ -7,7 +7,12 @@ class Header extends React.Component {
             <div className="header">
                 <h1>Google Books Search</h1>
                 <h2>Search for and Save Books of Interest</h2>
-                <Search />           
+                <form>
+                    <div className="input-group">
+                        <input className="form-control" type="text" placeholder="Find a Book"></input>
+                        <button className="btn input-group-append" type="submit" onClick={this.props.handleSearch}>Search</button>
+                    </div>
+                </form>          
             </div>
         )
     }
