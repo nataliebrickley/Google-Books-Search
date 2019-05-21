@@ -4,7 +4,8 @@ import Results from "../components/Results"
 import API from "../utils/API"
 class Search extends React.Component {
     state={
-        books: []
+        books: [],
+        search: ""
     }
     handleSearch = (event) => {
         event.preventDefault()
@@ -20,6 +21,7 @@ class Search extends React.Component {
             <div>
                 <Header 
                 handleSearch = {this.handleSearch}
+                search = {this.state.search}
                 />
                 <Results 
                 books = {this.state.books}
