@@ -24,18 +24,24 @@ mongoose
     .then(() => console.log("Database Connected!"))
     .catch(err => console.log(err));
 // Define API routes here
+
+//get all books from db
 app.get("/api/books", (req, res) => {
   db.Book
     .find({})
     .then(dbBook => res.json(dbBook))
     .catch(err => res.json(err))
 })
+//save a book to db
 app.post("/api/books", (req, res)  => {
   db.Book
     .create(req.body)
     .then(dbBook => res.json(dbBook))
     .catch(err => res.json(err))
 })
+//delete a book from db /api/books/:id
+
+
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
