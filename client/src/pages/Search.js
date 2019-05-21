@@ -5,12 +5,13 @@ import API from "../utils/API"
 class Search extends React.Component {
     state={
         books: [],
-        search: ""
+        search: "",
+        status: "Search for a Book!"
     }
     handleSearch = (search) => {
         API.searchBooks(search)
             .then(res => {
-                this.setState({ books: res.data.items })
+                this.setState({ books: res.data.items, status: "Search Results:" })
                 console.log(this.state) 
             })
         console.log(search)
@@ -30,6 +31,7 @@ class Search extends React.Component {
                 />
                 <Results 
                 books = {this.state.books}
+                status = {this.state.status}
                 />
             </div>
         )

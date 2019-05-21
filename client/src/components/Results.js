@@ -4,7 +4,7 @@ class Results extends React.Component {
     render() {
         return (
             <div className="results">
-                <h1>Search Results</h1>
+                <h1>{this.props.status}</h1>
                 
                     {this.props.books.filter(book => book.volumeInfo.imageLinks !== undefined && book.volumeInfo.authors !== undefined).map(book => (
                         <div className="result-box">
