@@ -3,15 +3,8 @@ import "../assets/results.css"
 import API from "../utils/API"
 
 class Results extends React.Component {
-    handleSave = (title, authors, description, image, link) => {
-        // let bookInfo = {
-        //     title: title,
-        //     authors: authors,
-        //     description: description,
-        //     image: image,
-        //     link: link
-        // }
-        API.saveBook(title, authors, description, image, link).then(res => console.log(res.data))
+    handleSave = (id) => {
+        API.saveBook(id).then(res => console.log(res.data))
     }
     render() {
         return (
@@ -27,7 +20,7 @@ class Results extends React.Component {
                                 <p className="authors">Written By: {book.authors.map(author => (<span>{author} </span>))}</p>
                             </div>
                             <div className="col-md-4">
-                                <button className="save btn">Save</button>
+                                <button className="save btn" onClick={()=> this.handleSave(book._id)}>Save</button>
                                 <a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a>
                             </div>
                         </div>

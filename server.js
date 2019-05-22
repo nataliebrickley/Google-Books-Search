@@ -49,27 +49,20 @@ app.get("/search/:search", (req, res) => {
             .catch(err => res.json(err))
     })
 })
-//get all books from db
+//get all saved books from db
 app.get("/api/books", (req, res) => {
   db.Book
-    .find({})
+    .find({saved: true})
     .then(dbBook => res.json(dbBook))
     .catch(err => res.json(err))
 })
 //save a book to db
-app.post("/api/books/:title/:authors/:description/:image/:link", (req, res)  => {
-  let post = {
-    title: req.params.title,
-    authors: req.params.authors,
-    description: req.params.description,
-    image: req.params.image,
-    link: req.params.link
-  }
-  // db.Book
-  //   .create(post)
-  //   .then(dbBook => res.json(dbBook))
-  //   .catch(err => res.json(err))
-  console.log(post)
+app.post("/api/books/:id", (req, res)  => {
+  db.Book
+    .findOneAndUpdate({_id: req.params.id}, {saved: true}, {new: true})
+    .then(dbBook => {
+      res.json(dbBook)
+    })
 })
 //delete a book from db /api/books/:id
 

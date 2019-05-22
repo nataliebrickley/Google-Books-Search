@@ -6,8 +6,8 @@ export default {
     return axios.get("/api/books")
   },
   //save a book to the database
-  saveBook: function (title, authors, description, image, link) {
-    return axios.post(`/api/books/${title}/${authors}/${description}/${image}/${link}`)
+  saveBook: function (id) {
+    return axios.post(`/api/books/${id}`)
   },
   //search google books
   searchBooks: function (search) {
