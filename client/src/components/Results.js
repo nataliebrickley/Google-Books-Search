@@ -1,37 +1,49 @@
 import React from "react";
 import "../assets/results.css"
+import API from "../utils/API"
+
 class Results extends React.Component {
+    handleSave = (title, authors, description, image, link) => {
+        // let bookInfo = {
+        //     title: title,
+        //     authors: authors,
+        //     description: description,
+        //     image: image,
+        //     link: link
+        // }
+        API.saveBook(title, authors, description, image, link).then(res => console.log(res.data))
+    }
     render() {
         return (
             <div className="results">
                 <h1>{this.props.status}</h1>
-                
-                    {this.props.books.filter(book => book.volumeInfo.imageLinks !== undefined && book.volumeInfo.authors !== undefined).map(book => (
-                        <div className="result-box">
-                            <hr />
-                            <div className="row">
-                                <div className="col-md-8">
-                                    <p className="title">{book.volumeInfo.title}</p><br />
-                                    <p className="authors">Written By: {book.volumeInfo.authors.map(author => (<span>{author} </span>))}</p>
-                                </div>
-                                <div className="col-md-4">
-                                    <button className="save btn">Save</button>
-                                    <a className="view btn" href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">View</a>
-                                </div>
+
+                {this.props.books.filter(book => book.image !== undefined && book.authors !== undefined).map(book => (
+                    <div className="result-box" key={book.link}>
+                        <hr />
+                        <div className="row">
+                            <div className="col-md-8">
+                                <p className="title">{book.title}</p><br />
+                                <p className="authors">Written By: {book.authors.map(author => (<span>{author} </span>))}</p>
                             </div>
-                            <div className="row">
+                            <div className="col-md-4">
+                                <button className="save btn">Save</button>
+                                <a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a>
+                            </div>
+                        </div>
+                        <div className="row">
                             <div className="col-md-2">
-                            <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="book cover" />
+                                <img src={book.image} alt="book cover" />
                             </div>
                             <div className="col-md-10">
-                                <p className="description">{book.volumeInfo.description}</p>
+                                <p className="description">{book.description}</p>
                             </div>
-                            </div>
-                            <hr />
                         </div>
-                    ))}
-                </div>
-            
+                        <hr />
+                    </div>
+                ))}
+            </div>
+
         )
     }
 };

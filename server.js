@@ -4,6 +4,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const mongoose = require("mongoose");
+const axios = require("axios")
 //require models
 const db = require("./models");
 // Define middleware here
@@ -24,7 +25,30 @@ mongoose
     .then(() => console.log("Database Connected!"))
     .catch(err => console.log(err));
 // Define API routes here
-
+//search route
+app.get("/search/:search", (req, res) => {
+  let search = req.params.search;
+  axios.get("https://www.googleapis.com/books/v1/volumes?q=" + search).then(function(response) {
+      let books = response.data.items
+      // console.log(books)
+      let array =[];
+      for(let i=0; i<books.length; i++) {
+        if(books[i].volumeInfo.imageLinks !== undefined && books[i].volumeInfo.authors !== undefined){
+        let bookInfo = {
+              title: books[i].volumeInfo.title,
+              authors: books[i].volumeInfo.authors,
+              description: books[i].volumeInfo.description,
+              image: books[i].volumeInfo.imageLinks.smallThumbnail,
+              link: books[i].volumeInfo.infoLink
+          }
+        array.push(bookInfo);  
+      }}
+      db.Book
+            .create(array)
+            .then(dbBook => res.json(dbBook))
+            .catch(err => res.json(err))
+    })
+})
 //get all books from db
 app.get("/api/books", (req, res) => {
   db.Book
@@ -33,11 +57,19 @@ app.get("/api/books", (req, res) => {
     .catch(err => res.json(err))
 })
 //save a book to db
-app.post("/api/books", (req, res)  => {
-  db.Book
-    .create(req.body)
-    .then(dbBook => res.json(dbBook))
-    .catch(err => res.json(err))
+app.post("/api/books/:title/:authors/:description/:image/:link", (req, res)  => {
+  let post = {
+    title: req.params.title,
+    authors: req.params.authors,
+    description: req.params.description,
+    image: req.params.image,
+    link: req.params.link
+  }
+  // db.Book
+  //   .create(post)
+  //   .then(dbBook => res.json(dbBook))
+  //   .catch(err => res.json(err))
+  console.log(post)
 })
 //delete a book from db /api/books/:id
 

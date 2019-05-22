@@ -1,5 +1,5 @@
-.header {
-    background: url("./headerImg.jpg") no-repeat;
+.savedHeader {
+    background: url("./savedbooks.jpg") no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -10,22 +10,11 @@
     text-shadow: 1px 1px black;
     padding-top: 25vh;
 }
-.header h1{
+.savedHeader h1{
     font-size: 64px;
     font-family: 'Oleo Script', cursive;
 }
-.header h2 {
+.savedHeader h2 {
     font-size: 30px;
     font-family: 'Oleo Script', cursive;
-}
-.btn {
-    background: darkgreen;
-    height: 35px;
-}
-input {
-    height: 35px;
-}
-form {
-    width: 35vw;
-    margin: 40px auto;
 }

@@ -7,7 +7,7 @@ const BookSchema = new Schema ({
         unique: true
     },
     authors: {
-        type: String,
+        type: Array,
     },
     description: {
         type: String,
@@ -18,6 +18,10 @@ const BookSchema = new Schema ({
     link: {
         type: String,
         required: true
+    },
+    saved: {
+        type: Boolean,
+        default: false
     }
 });
 

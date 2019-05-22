@@ -11,10 +11,11 @@ class Search extends React.Component {
     handleSearch = (search) => {
         API.searchBooks(search)
             .then(res => {
-                this.setState({ books: res.data.items, status: "Search Results:" })
+                this.setState({ books: res.data, status: "Search Results:" })
                 console.log(this.state) 
+                console.log(res)
             })
-        console.log(search)
+        
     }
     updateInput = (event) => {
         this.setState({
