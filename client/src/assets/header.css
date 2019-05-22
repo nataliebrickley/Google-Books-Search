@@ -2,7 +2,7 @@
     background: linear-gradient(
         rgba(255, 255, 255, 0.2), 
         rgba(255, 255, 255, 0.2)
-      ), url("https://cdn.pixabay.com/photo/2016/11/29/02/56/blond-1866951_960_720.jpg") no-repeat;
+      ), url("./headerImg.jpg") no-repeat;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
