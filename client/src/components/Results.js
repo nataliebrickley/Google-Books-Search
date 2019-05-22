@@ -16,7 +16,7 @@ class Results extends React.Component {
                                 </div>
                                 <div className="col-md-4">
                                     <button className="save btn">Save</button>
-                                    <button className="view btn">View</button>
+                                    <a className="view btn" href={book.volumeInfo.infoLink} target="_blank" rel="noopener noreferrer">View</a>
                                 </div>
                             </div>
                             <div className="row">
