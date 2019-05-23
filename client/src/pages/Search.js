@@ -14,8 +14,8 @@ class Search extends React.Component {
             .then(res => {
                 this.setState({ books: res.data, status: "Search Results:" })
                 console.log(this.state)
-                const tesNode = ReactDOM.findDOMNode(this.refs.test);
-                tesNode.scrollIntoView({behavior: 'smooth'});
+                const results = ReactDOM.findDOMNode(this.refs.test);
+                results.scrollIntoView({behavior: 'smooth'});
             })
     }
     updateInput = (event) => {
