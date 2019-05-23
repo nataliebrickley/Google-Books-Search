@@ -12,5 +12,8 @@ export default {
   //search google books
   searchBooks: function (search) {
     return axios.get(`/search/${search}`)
-  }
+  },
+  deleteAllUnsaved: function() {
+    return axios.delete("/api/books")
+  } 
 }

@@ -64,6 +64,12 @@ app.post("/api/books/:id", (req, res)  => {
       res.json(dbBook)
     })
 })
+//delete all unsaved books from db
+app.delete("/api/books", (req, res) => {
+  db.Book
+    .deleteMany({saved: false})
+    .then(dbBooks => res.json(dbBooks))
+})
 //delete a book from db /api/books/:id
 
 

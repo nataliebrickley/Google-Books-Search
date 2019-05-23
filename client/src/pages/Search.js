@@ -15,12 +15,14 @@ class Search extends React.Component {
                 console.log(this.state) 
                 console.log(res)
             })
-        
     }
     updateInput = (event) => {
         this.setState({
             search: event.target.value
         }) 
+    }
+    componentWillUnmount() {
+        API.deleteAllUnsaved()
     }
     render() {
         return (
