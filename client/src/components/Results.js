@@ -6,6 +6,17 @@ class Results extends React.Component {
     handleSave = (id) => {
         API.saveBook(id).then(res => console.log(res.data))
     }
+    handleDelete = (id) => {
+        API.deleteBook(id).then(() => this.props.getSaved())
+    }
+    handleButton = (id) => {
+        if(this.props.buttonText === "Save") {
+            this.handleSave(id)
+        }
+        else {
+            this.handleDelete(id)
+        }
+    }
     render() {
         return (
             <div className="results">
@@ -20,7 +31,7 @@ class Results extends React.Component {
                                 <p className="authors">Written By: {book.authors.map(author => (<span key={author}>{author} </span>))}</p>
                             </div>
                             <div className="col-md-4">
-                                <button className="save btn" onClick={()=> this.handleSave(book._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
+                                <button className="save btn" onClick={()=> this.handleButton(book._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
                                 <a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a>
                             </div>
                         </div>

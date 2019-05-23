@@ -13,7 +13,12 @@ export default {
   searchBooks: function (search) {
     return axios.get(`/search/${search}`)
   },
+  //delete all unsaved book
   deleteAllUnsaved: function() {
     return axios.delete("/api/books")
+  }, 
+  //delete one book
+  deleteBook: function(id) {
+    return axios.delete(`/api/books/${id}`)
   } 
 }

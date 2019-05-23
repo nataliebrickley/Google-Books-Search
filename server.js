@@ -71,7 +71,11 @@ app.delete("/api/books", (req, res) => {
     .then(dbBooks => res.json(dbBooks))
 })
 //delete a book from db /api/books/:id
-
+app.delete("/api/books/:id", (req, res) => {
+  db.Book
+    .deleteOne({_id: req.params.id})
+    .then(dbBook => res.json(dbBook))
+})
 
 // Send every other request to the React app
 // Define any API routes before this runs

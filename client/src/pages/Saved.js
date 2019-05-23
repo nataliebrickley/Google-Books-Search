@@ -9,6 +9,9 @@ class Saved extends React.Component {
         btnColor: {background: 'red'} 
     }
     componentDidMount() {
+       this.getSaved()
+    }
+    getSaved = () => {
         API.getAllBooks()
            .then(res => {
                this.setState({saved: res.data})
@@ -23,6 +26,7 @@ class Saved extends React.Component {
                     status = "Saved Books:"
                     buttonText = "Delete"
                     buttonColor = {this.state.btnColor}
+                    getSaved = {this.getSaved}
                 />
             </div>
         )
