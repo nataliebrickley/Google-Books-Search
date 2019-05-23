@@ -6,7 +6,7 @@ class Search extends React.Component {
     state={
         books: [],
         search: "",
-        status: "Search for a Book!"
+        status: "Search for a Book!",
     }
     handleSearch = (search) => {
         API.searchBooks(search)

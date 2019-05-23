@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 const BookSchema = new Schema ({
     title: {
         type: String,
-        required: true,
-        unique: true
+        required: true
     },
     authors: {
         type: Array,
