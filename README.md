@@ -3,9 +3,11 @@
 ## About 
 Google Books Search is a book search engine powered by the Google Books API. Users can search for, view, save, and delete their favorite books! 
   
-[![Image from Gyazo](https://i.gyazo.com/598a9980de87d718dbcfee2c0012e27b.gif)](https://gyazo.com/598a9980de87d718dbcfee2c0012e27b)
+[![Image from Gyazo](https://i.gyazo.com/7bafce4fba17fce6a6324ef32892b15e.jpg)](https://gyazo.com/7bafce4fba17fce6a6324ef32892b15e)  
 
-[![Image from Gyazo](https://i.gyazo.com/67a96f68d3d60715aaafe4abd8233efd.gif)](https://gyazo.com/67a96f68d3d60715aaafe4abd8233efd)  
+[![Image from Gyazo](https://i.gyazo.com/62f7eece6ec46270d16b58d8c83b0a73.png)](https://gyazo.com/62f7eece6ec46270d16b58d8c83b0a73)
+
+[![Image from Gyazo](https://i.gyazo.com/37132f82014adf67e100a2fd4f475417.png)](https://gyazo.com/37132f82014adf67e100a2fd4f475417)
 
 ## Technologies Used
 + React
@@ -14,7 +16,7 @@ Google Books Search is a book search engine powered by the Google Books API. Use
 + Node
 + Express
 + Google Books API
-
+sh
 ## Starting the app locally
 
 Start by installing front and backend dependencies. While in this directory, run the following command:
