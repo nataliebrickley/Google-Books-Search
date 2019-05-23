@@ -5,7 +5,8 @@ import API from "../utils/API"
 
 class Saved extends React.Component {
     state = {
-        saved: []
+        saved: [],
+        btnColor: {background: 'red'} 
     }
     componentDidMount() {
         API.getAllBooks()
@@ -20,6 +21,8 @@ class Saved extends React.Component {
                 <Results 
                     books = {this.state.saved}
                     status = "Saved Books:"
+                    buttonText = "Delete"
+                    buttonColor = {this.state.btnColor}
                 />
             </div>
         )

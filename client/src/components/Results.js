@@ -17,10 +17,10 @@ class Results extends React.Component {
                         <div className="row">
                             <div className="col-md-8">
                                 <p className="title">{book.title}</p><br />
-                                <p className="authors">Written By: {book.authors.map(author => (<span>{author} </span>))}</p>
+                                <p className="authors">Written By: {book.authors.map(author => (<span key={author}>{author} </span>))}</p>
                             </div>
                             <div className="col-md-4">
-                                <button className="save btn" onClick={()=> this.handleSave(book._id)}>Save</button>
+                                <button className="save btn" onClick={()=> this.handleSave(book._id)} style={this.props.buttonColor}>{this.props.buttonText}</button>
                                 <a className="view btn" href={book.link} target="_blank" rel="noopener noreferrer">View</a>
                             </div>
                         </div>

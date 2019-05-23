@@ -35,6 +35,7 @@ class Search extends React.Component {
                 <Results 
                 books = {this.state.books}
                 status = {this.state.status}
+                buttonText = "Save"
                 />
             </div>
         )
