@@ -3,8 +3,7 @@
 ## About 
 Google Books Search is a book search engine powered by the Google Books API. Users can search for, view, save, and delete their favorite books! 
   
-[![Image from Gyazo](https://i.gyazo.com/59f62e6c8edf4249868ab064ac456f60.gif)](https://gyazo.com/59f62e6c8edf4249868ab064ac456f60)  
-  
+[![Image from Gyazo](https://i.gyazo.com/598a9980de87d718dbcfee2c0012e27b.gif)](https://gyazo.com/598a9980de87d718dbcfee2c0012e27b)
 
 [![Image from Gyazo](https://i.gyazo.com/67a96f68d3d60715aaafe4abd8233efd.gif)](https://gyazo.com/67a96f68d3d60715aaafe4abd8233efd)  
 
