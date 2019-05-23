@@ -2,8 +2,9 @@ import React from "react";
 import Header from "../components/Header"
 import Results from "../components/Results"
 import API from "../utils/API"
+import ReactDOM from "react-dom";
 class Search extends React.Component {
-    state={
+    state = {
         books: [],
         search: "",
         status: "Search for a Book!",
@@ -12,14 +13,15 @@ class Search extends React.Component {
         API.searchBooks(search)
             .then(res => {
                 this.setState({ books: res.data, status: "Search Results:" })
-                console.log(this.state) 
-                console.log(res)
+                console.log(this.state)
+                const tesNode = ReactDOM.findDOMNode(this.refs.test);
+                tesNode.scrollIntoView({behavior: 'smooth'});
             })
     }
     updateInput = (event) => {
         this.setState({
             search: event.target.value
-        }) 
+        })
     }
     componentWillUnmount() {
         API.deleteAllUnsaved()
@@ -27,16 +29,18 @@ class Search extends React.Component {
     render() {
         return (
             <div>
-                <Header 
-                handleSearch = {this.handleSearch}
-                search = {this.state.search}
-                updateInput = {this.updateInput}
+                <Header
+                    handleSearch={this.handleSearch}
+                    search={this.state.search}
+                    updateInput={this.updateInput}
                 />
-                <Results 
-                books = {this.state.books}
-                status = {this.state.status}
-                buttonText = "Save"
-                />
+                <div ref="test" >
+                    <Results
+                        books={this.state.books}
+                        status={this.state.status}
+                        buttonText="Save"
+                    />
+                </div>
             </div>
         )
     }
